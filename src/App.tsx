@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import FourthPage from "./components/FourthPage";
-import SecondPage from "./components/SecondPage";
-import ThirdPage from "./components/ThirdPage";
-import WelcomePage from "./components/WelcomePage";
+import FourthPage from "./containers/FourthPage";
+import ThirdPage from "./containers/ThirdPage";
+import SecondPage from "./containers/SecondPage";
+import WelcomePage from "./containers/WelcomePage";
 
 function App() {
   return (
