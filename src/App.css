@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.bgcolor-1 {
+  background: #431ab4f6;
+}
+.bgcolor-2{
+  background: white;
+}
+.color-1{
+  color: #431ab4f6;
+}
+.color-2{
+  color: #303030;
+}
