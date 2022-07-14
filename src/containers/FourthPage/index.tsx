@@ -1,5 +1,5 @@
 import React from "react";
-import CommonComponent from "../CommonComponent.tsx";
+import CommonComponent from "../../components/CommonComponent.tsx";
 
 const FourthPage = () => {
   return (

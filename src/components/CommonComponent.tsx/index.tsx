@@ -1,15 +1,7 @@
 import React from "react";
-import CreateButton from "../Buttons/CreateButton";
+import CreateButton from "../Buttons";
+import { CommonComponentProps } from "./types";
 
-type CommonComponentProps = {
-  imgUrl: string;
-  pageTitle: string;
-  subTitle: string;
-  child?: React.ReactNode;
-  path: string;
-  buttonText: string;
-  successImg?: string;
-};
 const CommonComponent = ({
   child,
   imgUrl,

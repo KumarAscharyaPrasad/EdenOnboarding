@@ -1,14 +1,14 @@
 import React from "react";
-import CommonComponent from "../CommonComponent.tsx";
-import ThirdPageCards from "../InputFields/thirdPageCards";
+import CommonComponent from "../../components/CommonComponent.tsx";
+import ThirdPageCards from "../../components/InputFields/thirdPageCards";
 
 const ThirdPage = () => {
   return (
     <>
       <CommonComponent
         imgUrl={"images/thirdprogress.png"}
-        pageTitle={"Welcome! First things first..."}
-        subTitle={"You can always change them later"}
+        pageTitle={"How are you planning to use Eden?"}
+        subTitle={"We'll streamline your setup experience accordingly."}
         child={<ThirdPageCards />}
         path={"/fourth-page"}
         buttonText="Create Workspace"

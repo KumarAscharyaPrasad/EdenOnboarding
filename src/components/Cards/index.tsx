@@ -1,17 +1,13 @@
 import React from "react";
-type CardsProps = {
-  icon: React.ReactNode;
-  header: string;
-  content: string;
-  selected: boolean;
-  changeSelected: (selected: boolean) => void;
-};
+import { CardsProps } from "./types";
+
 const Cards = ({
   content,
   header,
   icon,
   changeSelected,
-  selected,
+  checked,
+  current,
 }: CardsProps) => {
   return (
     <>
@@ -19,16 +15,14 @@ const Cards = ({
       <div
         className=" col-2 mx-4 bgcolor-2"
         style={{
-          border: `1px  ${selected ? " solid #431ab4f6" : " solid #c7c7c7"}`,
+          border: `1px  ${checked ? " solid #431ab4f6" : " solid #c7c7c7"}`,
           borderRadius: "5px",
           width: "12vw",
         }}
-        onClick={() => {
-          changeSelected(selected ? selected : !selected);
-        }}
+        onClick={() => changeSelected(current)}
       >
         <div className="p-2 fw-bold">
-          <span className={`d-flex my-3 ${selected ? "color-1" : "color-2"}`}>
+          <span className={`d-flex my-3 ${checked ? "color-1" : "color-2"}`}>
             {icon}
           </span>
           <p className="d-flex ">{header}</p>

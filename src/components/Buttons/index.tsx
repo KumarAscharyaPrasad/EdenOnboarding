@@ -1,9 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-type CreateButtonProps = {
-  buttonText: string;
-  path:string
-};
+import { CreateButtonProps } from "./types";
+
 const CreateButton = ({ buttonText,path }: CreateButtonProps) => {
   const navigate = useNavigate();
 

@@ -1,6 +1,6 @@
-import CommonComponent from "./CommonComponent.tsx";
-import FirstPage from "./InputFields/firstPageInput";
 import React from "react";
+import CommonComponent from "../../components/CommonComponent.tsx";
+import FirstPageInput from "../../components/InputFields/firstPageInput";
 
 const WelcomePage = () => {
   return (
@@ -9,7 +9,7 @@ const WelcomePage = () => {
         imgUrl={"images/firstprogress.png"}
         pageTitle={"Welcome! First things first..."}
         subTitle={"You can always change them later"}
-        child={<FirstPage />}
+        child={<FirstPageInput />}
         path="/second-page"
         buttonText="Create Workspace"
       />
