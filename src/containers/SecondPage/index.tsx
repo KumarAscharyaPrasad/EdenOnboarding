@@ -1,17 +1,38 @@
+import { useState } from "react";
 import CommonComponent from "../../components/CommonComponent.tsx";
 import SecondPageInput from "../../components/InputFields/secondPageInput";
-
+import { WorkspaceType } from "../../components/InputFields/types";
+import { SecondPageData } from "../../mocks/StaticData";
+const initialWorkSpace: WorkspaceType = {
+  workspaceName: "",
+  url: "",
+};
 const SecondPage = () => {
+  // all the crud operations and state handling will be done here
+  // from here data will pass to the child components through props
+  const [workspace, setWorkspace] = useState<WorkspaceType>(initialWorkSpace);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+    setWorkspace({
+      ...workspace,
+      [name]: value,
+    });
+  };
   return (
     <>
       {" "}
       <CommonComponent
-        imgUrl={"images/secondprogress.png"}
-        pageTitle={"Let's setup a home for all your work"}
-        subTitle={"You can always create another workspace later"}
-        child={<SecondPageInput />}
-        path={"/third-page"}
-        buttonText="Create Workspace"
+        imgUrl={SecondPageData.imgUrl}
+        pageTitle={SecondPageData.pageTitle}
+        subTitle={SecondPageData.subTitle}
+        child={
+          <SecondPageInput
+            workspace={workspace}
+            handleInputChange={handleInputChange}
+            path={SecondPageData.path}
+            buttonText={SecondPageData.buttonText}
+          />
+        }
       />
     </>
   );

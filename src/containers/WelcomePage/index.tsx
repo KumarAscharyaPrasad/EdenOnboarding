@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import CommonComponent from "../../components/CommonComponent.tsx";
 import FirstPageInput from "../../components/InputFields/firstPageInput";
-
+import { NamesType } from "../../components/InputFields/types";
+import { WelcomePageData } from "../../mocks/StaticData";
+const initialNames: NamesType = {
+  fullName: "",
+  displayName: "",
+};
 const WelcomePage = () => {
+  // all the crud operations and state handling will be done here
+  // from here data will pass to the child components through props
+  const [names, setNames] = useState<NamesType>(initialNames);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+    setNames({
+      ...names,
+      [name]: value,
+    });
+  };
   return (
     <>
       <CommonComponent
-        imgUrl={"images/firstprogress.png"}
-        pageTitle={"Welcome! First things first..."}
-        subTitle={"You can always change them later"}
-        child={<FirstPageInput />}
-        path="/second-page"
-        buttonText="Create Workspace"
+        imgUrl={WelcomePageData.imgUrl}
+        pageTitle={WelcomePageData.pageTitle}
+        subTitle={WelcomePageData.subTitle}
+        child={
+          <FirstPageInput
+            names={names}
+            handleInputChange={handleInputChange}
+            path={WelcomePageData.path}
+            buttonText={WelcomePageData.buttonText}
+          />
+        }
       />
     </>
   );
