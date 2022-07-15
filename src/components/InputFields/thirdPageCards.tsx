@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { RiTeamFill, RiUserFill } from "react-icons/ri";
+import CreateButton from "../Buttons";
 import Cards from "../Cards";
-import { CardType } from "../Cards/types";
-const ThirdPageCards = () => {
-  const [selected, setSelected] = useState<CardType>("MYSELF");
+import { ThirdPageInputProps } from "./types";
+const ThirdPageCards = ({buttonText,path,selected,setSelected}:ThirdPageInputProps) => {
   return (
     <>
       <div className="container">
@@ -26,7 +25,12 @@ const ThirdPageCards = () => {
             changeSelected={setSelected}
             current={"MYTEAM"}
           />
+          
         </div>
+        <div className="mx-auto col-sm-4">
+            {" "}
+            <CreateButton buttonText={buttonText} path={path} />
+          </div>
       </div>
     </>
   );

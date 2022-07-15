@@ -1,11 +1,17 @@
-import React from "react";
+import CreateButton from "../Buttons";
+import { SecondPageInputProps } from "./types";
 
-const SecondPageInput = () => {
+const SecondPageInput = ({
+  buttonText,
+  handleInputChange,
+  path,
+  workspace,
+}: SecondPageInputProps) => {
   return (
     <>
       <div className="h-100 mx-auto col-sm-4 justify-content-center">
         <div className="my-auto ">
-          <div className="mt-3" >
+          <form className="mt-3">
             <div className="d-flex">
               <label
                 htmlFor="inputWorkspaceName"
@@ -21,9 +27,11 @@ const SecondPageInput = () => {
             <input
               className="form-control"
               type="text"
-              name="fullName"
+              name="workspaceName"
               id="inputWorkspaceName"
               placeholder="Eden"
+              value={workspace.workspaceName}
+              onChange={handleInputChange}
             />
             <div className="d-flex mt-4">
               <label
@@ -38,7 +46,11 @@ const SecondPageInput = () => {
               </label>
             </div>
             <div className="input-group mb-3">
-              <span className="input-group-text" id="basic-addon3" style={{ opacity: "65%" }}>
+              <span
+                className="input-group-text"
+                id="basic-addon3"
+                style={{ opacity: "65%" }}
+              >
                 www.eden.com/
               </span>
               <input
@@ -47,9 +59,12 @@ const SecondPageInput = () => {
                 id="inputWorkspaceUrl"
                 aria-describedby="basic-addon3"
                 placeholder="Example"
+                value={workspace.url}
+                onChange={handleInputChange}
               />
             </div>
-          </div>
+            <CreateButton buttonText={buttonText} path={path} />
+          </form>
         </div>
       </div>
     </>

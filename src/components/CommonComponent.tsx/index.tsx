@@ -1,5 +1,4 @@
 import React from "react";
-import CreateButton from "../Buttons";
 import { CommonComponentProps } from "./types";
 
 const CommonComponent = ({
@@ -7,8 +6,6 @@ const CommonComponent = ({
   imgUrl,
   pageTitle,
   subTitle,
-  path,
-  buttonText,
   successImg,
 }: CommonComponentProps) => {
   return (
@@ -36,10 +33,6 @@ const CommonComponent = ({
         <p style={{ color: "gray" }}>{subTitle}</p>
       </div>
       {child}
-      <div className="mx-auto col-sm-4">
-        {" "}
-        <CreateButton buttonText={buttonText} path={path} />
-      </div>
     </>
   );
 };
