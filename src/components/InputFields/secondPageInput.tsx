@@ -60,6 +60,7 @@ const SecondPageInput = ({
                 aria-describedby="basic-addon3"
                 placeholder="Example"
                 value={workspace.url}
+                name='url'
                 onChange={handleInputChange}
               />
             </div>
